@@ -1,11 +1,11 @@
 package ru.learnup18.aviasales.services;
 
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 import ru.learnup18.aviasales.model.EmailNotifier;
 
 import java.util.HashMap;
 
-@Service
+@Component
 public class EmailNotifierService {
     static private HashMap<String, EmailNotifier> emailNotifierMap =  new HashMap<String, EmailNotifier>();
 
@@ -15,11 +15,10 @@ public class EmailNotifierService {
         return emailNotifier;
     }
 
-    public EmailNotifier EmailNotifierSend(String title, String info) {
+    public void EmailNotifierSend(String title, String info) {
         for (EmailNotifier s : emailNotifierMap.values()) {
             System.out.println("@@@@@@> Отправляю сообщение : " + s.getName() + ", " + s.getEmail());
             System.out.println("@@@@@@@@@@@@> title, info : " + title + ", " + info);
         }
-        return null;
     }
 }
