@@ -19,7 +19,7 @@ public class EmailNotifierEvent extends ApplicationEvent {
         }
 
         public static Info of(String title, String info) {
-            new EmailNotifierService().EmailNotifierSend(title, info);
+
             return new Info(title, info);
         }
     }
